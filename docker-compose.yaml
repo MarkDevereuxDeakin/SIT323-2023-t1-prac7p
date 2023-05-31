@@ -1,0 +1,15 @@
+#Specifies the version of docker compose file format to use
+version: '3'
+# Start of definition of service
+services:
+  # The name of the service
+  node-web-app:
+    image: markdevereux/node-web-app:latest
+    # The build context 
+    build:
+      context: .
+      # Specifies the dockerfile building the image
+      dockerfile: Dockerfile
+    # Mapping the ports of the container and host computer 
+    ports:
+      - "8080:8080"
