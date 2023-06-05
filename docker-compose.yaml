@@ -1,15 +1,25 @@
-#Specifies the version of docker compose file format to use
-version: '3'
-# Start of definition of service
+version: '3.0'
+
 services:
-  # The name of the service
-  node-web-app:
-    image: markdevereux/node-web-app:latest
+  #multiple microservices can be added under "services" 
+  app:
+    image: markdevereux/node-web-app:3.0
     # The build context 
-    build:
-      context: .
+    build: .
+    volumes:
+      - .:/usr/src/app
+    container_name: Prac-5p
+    restart: unless-stopped
       # Specifies the dockerfile building the image
-      dockerfile: Dockerfile
+      #dockerfile: Dockerfile
     # Mapping the ports of the container and host computer 
     ports:
-      - "8080:8080"
+      - "8080:8080"  
+  #second microservice - database
+  #mysqldb:
+  #image:
+  #restart:
+  #env_file:
+  #environment:
+  #ports:
+  #volumes:
