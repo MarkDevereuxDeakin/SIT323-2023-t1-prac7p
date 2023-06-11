@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: calculator-container
-        image: markdevereux/node-web-app:3.0
+        image: markdevereux/calculator-web-app:3.0
         imagePullPolicy: Never
         ports:
         - containerPort: 8080

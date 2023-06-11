@@ -9,7 +9,7 @@ metadata:
     #Specifications: name of containers, image source and ports etc
 spec:
   containers:
-  - image: markdevereux/node-web-app:3.0
+  - image: markdevereux/calculator-web-app:3.0
     name: calculator-app
     imagePullPolicy: Never
     ports:
