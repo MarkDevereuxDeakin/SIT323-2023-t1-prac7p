@@ -8,7 +8,7 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
-    container_name: Prac-5p
+    container_name: Prac-7p
     restart: unless-stopped
       # Specifies the dockerfile building the image
       #dockerfile: Dockerfile
