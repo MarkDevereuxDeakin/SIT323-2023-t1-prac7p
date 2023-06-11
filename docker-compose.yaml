@@ -1,14 +1,17 @@
 version: '3.0'
-
 services:
   #multiple microservices can be added under "services" 
   app:
+  #The Docker image address/name
     image: markdevereux/node-web-app:3.0
     # The build context 
     build: .
     volumes:
       - .:/usr/src/app
+      #container names
     container_name: Prac-7p
+    #direction for restarting the application in the event of a shutdown
+    #if manually stopped, don't restart
     restart: unless-stopped
       # Specifies the dockerfile building the image
       #dockerfile: Dockerfile

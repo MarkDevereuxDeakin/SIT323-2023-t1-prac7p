@@ -1,9 +1,12 @@
 apiVersion: apps/v1
+#what the yaml file is providing instructions for
 kind: Deployment
+#information about the file and corresponding app
 metadata:
   name: calculator-deployment
   labels:
-    app: calculator-app    
+    app: calculator-app 
+#Specifications: how many replicas to run, name of containers, image source and ports
 spec:
   replicas: 3
   selector:
@@ -17,6 +20,5 @@ spec:
       containers:
       - name: calculator-container
         image: markdevereux/node-web-app:3.0
-        imagePullPolicy: Never
         ports:
         - containerPort: 8080

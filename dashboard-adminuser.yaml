@@ -1,5 +1,7 @@
 apiVersion: v1
+##what the yaml file is providing instructions for
 kind: ServiceAccount
+#information about the file and instructions for use
 metadata:
   name: admin-user
   namespace: kubernetes-dashboard
