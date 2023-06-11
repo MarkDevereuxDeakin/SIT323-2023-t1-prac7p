@@ -2,7 +2,7 @@
 FROM node:18
 
 #create app director
-WORKDIR E:/Deakin IT/Networking and Cloud Technologies/SIT323 - Cloud Application Development\OnTrack/7.1P Kubernetes/SIT323-2023-t1-prac7p/
+WORKDIR /usr/src/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -12,6 +12,8 @@ RUN npm install
 
 #bundle app source
 COPY server.js .
+
+COPY index.html .
 
 #Port to be exposed
 EXPOSE 8080
