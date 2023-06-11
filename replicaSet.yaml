@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: calculator-replicaset
+  labels:
+    app: calculator-app    
+spec:  
+  replicas: 3
+  selector:
+    matchLabels:
+      app: calculator-app 
+  template:
+    metadata:
+      labels:
+        app: calculator-app 
+    spec:
+      containers:
+      - name: calculator-container
+        image: markdevereux/node-web-app:3.0
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
